@@ -12,12 +12,12 @@ class ArticleController {
   }
   async update(req, res, next) {
     try {
-      /* if (req.user.role !== "admin") {
+      if (req.user.role !== "admin") {
         return res.status(403).send({
           message:
             "Accès refusé. Seuls les administrateurs peuvent effectuer cette action.",
         });
-      }*/
+      }
       const id = req.params.id;
       const data = req.body;
       const articleModified = await articleService.update(id, data);
@@ -31,12 +31,12 @@ class ArticleController {
   }
   async delete(req, res, next) {
     try {
-      /* if (req.user.role !== "admin") {
+      if (req.user.role !== "admin") {
         return res.status(403).send({
           message:
             "Accès refusé. Seuls les administrateurs peuvent effectuer cette action.",
         });
-      }*/
+      }
 
       const id = req.params.id;
       await articleService.delete(id);
